@@ -25,6 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          <div class="activity-card-participants">
+            <h5>Participants</h5>
+            ${
+              details.participants.length > 0
+                ? `<ul>
+                    ${details.participants
+                      .map((participant) => {
+                        const namePart = participant
+                          .replace(/@.*/, "")
+                          .replace(/\./g, " ")
+                          .replace(/\b\w/g, (c) => c.toUpperCase());
+                        return `<li><span class="participant-name">${namePart}</span> <span class="participant-email">&lt;${participant}&gt;</span></li>`;
+                      })
+                      .join("")}
+                  </ul>`
+                : `<span class="no-participants">No participants yet.</span>`
+            }
+          </div>
         `;
 
         activitiesList.appendChild(activityCard);
