@@ -1,3 +1,10 @@
+.participant-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -113,9 +120,45 @@ section h3 {
 }
 
 .participant-name {
-  color: #222;
+  color: #145a14;
   font-weight: bold;
   margin-right: 6px;
+  font-family: 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.activity-card-participants ul {
+  list-style-type: disc;
+  margin-left: 22px;
+  margin-bottom: 0;
+  color: #333;
+  font-size: 0.99em;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.activity-card-participants li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+  background: #e8eaf6;
+  border-radius: 3px;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.delete-participant {
+  color: #c62828;
+  cursor: pointer;
+  margin-left: 12px;
+  font-size: 1.1em;
+  vertical-align: middle;
+  transition: color 0.2s;
+  margin-right: 0;
+  margin-left: auto;
+}
+.delete-participant:hover {
+  color: #ff1744;
 }
 
 .participant-email {
